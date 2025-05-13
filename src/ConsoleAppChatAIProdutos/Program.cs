@@ -53,7 +53,7 @@ PromptExecutionSettings settings;
 if (aiSolution == InputHelper.OLLAMA)
 {
     kernelBuilder.AddOllamaChatCompletion(
-        modelId: configuration["Ollama:ModelId"]!,
+        modelId: configuration["Ollama:Model"]!,
         endpoint: new Uri(configuration["Ollama:Endpoint"]!),
         serviceId: "chat");
     settings = new OllamaPromptExecutionSettings
@@ -64,7 +64,7 @@ if (aiSolution == InputHelper.OLLAMA)
 else if (aiSolution == InputHelper.AZURE_OPEN_AI)
 {
     kernelBuilder.AddAzureOpenAIChatCompletion(
-        deploymentName: "o3-mini",
+        deploymentName: configuration["AzureOpenAI:DeploymentName"]!,
         endpoint: configuration["AzureOpenAI:Endpoint"]!,
         apiKey: configuration["AzureOpenAI:ApiKey"]!,
         serviceId: "chat");
