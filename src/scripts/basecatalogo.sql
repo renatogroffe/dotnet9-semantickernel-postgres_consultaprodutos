@@ -1,6 +1,6 @@
 CREATE DATABASE basecatalogo;
 
-\c baseamil;
+\c basecatalogo;
 
 CREATE TABLE "Produtos" (
     "Id" SERIAL NOT NULL,
